@@ -1,0 +1,215 @@
+.App {
+  text-align: center;
+  padding: 00px;
+}
+
+body {
+  background-color: #1A2B3C;
+}
+
+
+.drop-area,
+.video-container {
+  width: 640px;
+  height: 640px;
+  
+  box-shadow: inset 0 0 5px #3498db;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  align-items: top;
+  padding-top: 0px;
+  position: relative;
+  overflow: hidden;
+  background-color: #1A2B3C;
+  background-image: url('C:\VisualStudio\mediapipe_web_app\public\assets\cam.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+.joint-controls-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  /* Add padding for better spacing */
+}
+
+.joint-controls-container div {
+  margin: 5px;
+  /* Adjust margin as needed */
+}
+
+video {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  /* Ensure video is behind the canvas */
+}
+
+button {
+  margin: 10px;
+  color: whitesmoke;
+  background-color: #1EB980;
+  border-radius: 8px;
+  height: 30px;
+}
+
+.pose-overlay {
+  position: absolute;
+  top: 20;
+  padding-top: 75px;
+  left: 0;
+  z-index: 2;
+    /* Ensure canvas is above the video */
+}
+
+/* Slider container styles */
+.slider-container {
+  position: relative;
+  z-index: 3;
+  /* Higher than video and pose-overlay */
+  width: 640px;
+  /* Set the width to match the canvas */
+  margin: 20px auto;
+  padding: 15px 0;
+  /* Add some padding for better visibility */
+  background-color: rgba(255, 255, 255, 0.7);
+  /* Optional: for better visibility */
+}
+
+/* Slider styles */
+input[type="range"] {
+  width: 100%;
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 15px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  cursor: pointer;
+  /* Makes it clear the slider is interactive */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #333;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #333;
+}
+
+/* Define the CSS for the captured frames container */
+.captured-frames-container {
+  display: flex;
+  /* Display frames in a row */
+  flex-wrap: wrap;
+  /* Allow frames to wrap to the next row if needed */
+  gap: 10px;
+  /* Gap between frames */
+  justify-content: flex-start;
+  /* Align frames to the start of the container */
+  align-items: center;
+  /* Align frames vertically in the center */
+}
+
+/* Style each individual frame (img) */
+.captured-frame {
+  max-width: 200px;
+  /* Set a maximum width for each frame */
+  max-height: 150px;
+  /* Set a maximum height for each frame */
+}
+
+/* base styles */
+* {
+  margin: 0;
+    color: #FBFBFB;
+}
+.navbar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 0px solid #f2f2f2;
+}
+.navbar h1 {
+  color: #FBFBFB;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #1EB980
+}
+
+/* Example with fixed dimensions */
+.logo {
+  height: 60px;
+ padding-right: 10px;
+ padding-top: 10px;
+}
+
+.camera-toggle-button {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.input-video,
+.output-canvas {
+    display: inline-block;
+}
+
+.human-body {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.joint {
+  width: 60px;
+  height: 60px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.joint:hover {
+  background-color: #ccc;
+}
+
+.selected {
+  background-color: #3498db;
+  color: #fff;
+}
